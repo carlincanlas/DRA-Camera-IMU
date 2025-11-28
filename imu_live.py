@@ -45,7 +45,7 @@ try:
         # Physical units
         ax = ax_raw * ACCEL_SENS
         ay = ay_raw * ACCEL_SENS
-        az = az_raw * ACCEL_SENS
+        az = az_raw * ACCEL_SENS - 0.55
 
         gx = gx_raw * GYRO_SENS
         gy = gy_raw * GYRO_SENS
@@ -61,4 +61,5 @@ try:
 
 except KeyboardInterrupt:
     print("\nExiting...")
+
 
