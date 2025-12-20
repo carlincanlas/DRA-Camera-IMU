@@ -35,7 +35,7 @@ def read_imu():
     ay_raw = int.from_bytes(a[2:4], "little", signed=True)
     az_raw = int.from_bytes(a[4:6], "little", signed=True)
 
-    # Convert raw ? real units
+    # Convert raw real units
 
     # Accel conversion
     # 1 raw = 0.061 mg = 0.000061 g
