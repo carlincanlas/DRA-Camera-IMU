@@ -2,6 +2,9 @@ import time
 import csv
 import smbus2
 from picamera2 import Picamera2
+"""
+Log IMU data and IMU-camerea timestamps
+"""
 
 # IMU SETUP
 bus = smbus2.SMBus(1)
