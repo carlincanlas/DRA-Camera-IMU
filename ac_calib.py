@@ -8,8 +8,9 @@ ADDR = 0x6A
 
 OUTX_L_A = 0x28
 
-# initial sensitivity used in your logger (m/s^2 per LSB)
-ACCEL_SENS_INIT = 0.000598  # 0.061 mg/LSB
+# Initial sensitivity
+ACCEL_SENS_INIT = 0.000598  # m/s^2 per LSB
+                            # 0.061 mg = 0.061 × 9.80665 × 10⁻³ m/s² ≈ 0.000598 m/s²
 
 def read_word(reg):
     data = bus.read_i2c_block_data(ADDR, reg, 2)
@@ -22,7 +23,7 @@ def collect_raw(n=300, delay=0.01):
     axs = []
     ays = []
     azs = []
-    print(f"Collecting {n} samples ? keep board still and flat...")
+    print(f"Collecting {n} samples, keep board still and flat...")
     for _ in range(n):
         axs.append(read_word(OUTX_L_A + 0))
         ays.append(read_word(OUTX_L_A + 2))
